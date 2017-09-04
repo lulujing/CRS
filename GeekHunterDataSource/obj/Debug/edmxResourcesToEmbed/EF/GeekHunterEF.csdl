@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GeekHunterModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Candidate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Candidate_Skills" Relationship="Self.FK_Candidate_Skills_1_0" FromRole="Candidate" ToRole="Candidate_Skills" />
+  </EntityType>
+  <EntityType Name="Candidate_Skills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CandidateId" Type="Int64" />
+    <Property Name="SkillId" Type="Int64" />
+    <NavigationProperty Name="Candidate" Relationship="Self.FK_Candidate_Skills_1_0" FromRole="Candidate_Skills" ToRole="Candidate" />
+    <NavigationProperty Name="Skill" Relationship="Self.FK_Candidate_Skills_0_0" FromRole="Candidate_Skills" ToRole="Skill" />
+  </EntityType>
+  <EntityType Name="Skill">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Candidate_Skills" Relationship="Self.FK_Candidate_Skills_0_0" FromRole="Skill" ToRole="Candidate_Skills" />
+  </EntityType>
+  <Association Name="FK_Candidate_Skills_1_0">
+    <End Role="Candidate" Type="Self.Candidate" Multiplicity="0..1" />
+    <End Role="Candidate_Skills" Type="Self.Candidate_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Candidate">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Candidate_Skills">
+        <PropertyRef Name="CandidateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Candidate_Skills_0_0">
+    <End Role="Skill" Type="Self.Skill" Multiplicity="0..1" />
+    <End Role="Candidate_Skills" Type="Self.Candidate_Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skill">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Candidate_Skills">
+        <PropertyRef Name="SkillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GeekHunterEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Candidates" EntityType="Self.Candidate" />
+    <EntitySet Name="Candidate_Skills" EntityType="Self.Candidate_Skills" />
+    <EntitySet Name="Skills" EntityType="Self.Skill" />
+    <AssociationSet Name="FK_Candidate_Skills_1_0" Association="Self.FK_Candidate_Skills_1_0">
+      <End Role="Candidate" EntitySet="Candidates" />
+      <End Role="Candidate_Skills" EntitySet="Candidate_Skills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Candidate_Skills_0_0" Association="Self.FK_Candidate_Skills_0_0">
+      <End Role="Skill" EntitySet="Skills" />
+      <End Role="Candidate_Skills" EntitySet="Candidate_Skills" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

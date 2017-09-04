@@ -1,0 +1,46 @@
+﻿@model CRM.Models.CandidatesMV
+@{ 
+    Layout = null;
+}
+@if (Model.CandidatesList != null)
+{
+    <!--Each candidate information-->
+        foreach (var C in Model.CandidatesList)
+        {
+            <div class="col-md-12">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <label>FirstName:</label>
+                                      @C.FirstName
+                                </div>
+                                <div class="col-md-3">
+                                    <label>LastName:</label>
+                                     @C.LastName
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Skills:</label>
+                                    @if (C.Skills != null)
+                                    {
+                                        foreach (var s in C.Skills)
+                                        {
+                                        @s.Name <span>&nbsp;</span>
+                                        }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    }
+}
+else
+{
+    <div class="col-sm-12">
+        <p> &nbsp;&nbsp;&nbsp;No resource found that match</p>
+    </div>
+}
+

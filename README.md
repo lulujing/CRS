@@ -20,4 +20,35 @@ Link: http://system.data.sqlite.org/downloads/1.0.105.2/sqlite-netFx46-setup-bun
 
 I also putted it on my project.
 
+#### Installing
+
+ ![1](/Images/1.png)
+ ![1](/Images/2.png)
+ ![1](/Images/3.png)
+ ![1](/Images/4.png)
+
+#### Restart VS 2015
+Set CRM as Start up Website
+
+ ![1](/Images/10.png)
+ 
+ Then Run it.
+ 
+ ## functionalitiesUsing GRS a recruitment agent should be able to:
+ ###Demo
+ Using GRS website can able to:
+  - register a new candidate:
+     - first name / last name
+     - select technologies candidate has experience in from the predefined list 
+      ![1](/Images/6.png)
+  - view all candidates
+      ![1](/Images/5.png)
+  - filter candidates by technology
+       ![1](/Images/7.png)
+        ![1](/Images/8.png)
+         ![1](/Images/9.png)
+  ###Unit test
+  ![1](/Images/12.png)
+
+
 

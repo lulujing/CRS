@@ -1,4 +1,4 @@
-  # CRS(Geek Registration System )
+    # CRS(Geek Registration System )
 It helps for IT-recruiting agency "Geek Hunters" to manage thier Candidates.
 
 ## Getting Started
@@ -35,7 +35,7 @@ Set CRM as Start up Website
  Then Run it.
  
  ## functionalitiesUsing GRS a recruitment agent should be able to:
- ###Demo
+ ### Demo
  Using GRS website can able to:
   - register a new candidate:
      - first name / last name

@@ -1,4 +1,4 @@
-    # CRS(Geek Registration System )
+# CRS(Geek Registration System )
 It helps for IT-recruiting agency "Geek Hunters" to manage thier Candidates.
 
 ## Getting Started

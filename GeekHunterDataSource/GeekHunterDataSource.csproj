@@ -150,6 +150,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GeekHunterEF.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DB\GeekHunter.sqlite" />
     <None Include="EF\GeekHunterEF.edmx.diagram">
       <DependentUpon>GeekHunterEF.edmx</DependentUpon>
     </None>

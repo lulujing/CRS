@@ -215,6 +215,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="App_Data\GeekHunter.sqlite" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\Home.js" />
     <Content Include="scripts\i18n\angular-locale_af-na.js" />
@@ -990,9 +991,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\GeekerHunterServices\GeekerHunterServices.csproj">
       <Project>{81590b46-9070-4a87-9a8a-c603035af928}</Project>
